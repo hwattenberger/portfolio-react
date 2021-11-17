@@ -1,3 +1,5 @@
+import React, {useState} from 'react';
+
 import './App.css';
 import Projects from './components/Projects';
 import MainProject from './components/MainProject';
@@ -5,6 +7,8 @@ import MainProject from './components/MainProject';
 import noriBox from './images/nori-box.png'
 
 function App() {
+  const [projectNum, setProjectNum] = useState(1);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +22,8 @@ function App() {
           <img src={noriBox} className="object-none"></img>
         </div>
         <div className="h-screen flex flex-col lg:flex-row">
-          <MainProject />
-          <Projects/>
+          <MainProject projectNum={projectNum} />
+          <Projects projectNum={projectNum} setProjectNum={setProjectNum}/>
         </div>
       </main>
     </div>
