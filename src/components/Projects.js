@@ -8,7 +8,7 @@ const Projects = ({projectNum, setProjectNum}) => {
     return (
         // <div className="flex flex-col h-full justify-center">
         //     <h2 className="text-center text-2xl">Pick a project</h2>
-            <div className="grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 p-4">
+            <div className="grid grid-flow-row grid-cols-2 grid-rows-3 gap-4 p-4">
                 <div className="bg-green-300 p-2 drop-shadow rounded flex flex-col justify-center 
                     hover:bg-purple-400 transform hover:-translate-y-1 transition duration-500 ease-in-out cursor-pointer"
                     onClick={() => onClickProject(1)}>

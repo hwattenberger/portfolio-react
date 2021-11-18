@@ -21,9 +21,23 @@ function App() {
           <a href="#work"><button className="px-8 py-2 mt-4 bg-gray-400	rounded-md	">Learn More</button></a>
           <img src={noriBox} className="object-none"></img>
         </div>
-        <div className="h-screen flex flex-col lg:flex-row">
+        <div className="min-h-screen flex flex-col lg:flex-row">
           <MainProject projectNum={projectNum} />
           <Projects projectNum={projectNum} setProjectNum={setProjectNum}/>
+        </div>
+        <div className="flex flex-col items-center justify-center bg-purple-300">
+          <div className="md:w-6/12 bg-purple-100 p-4 m-4 rounded">
+            <h2 className="text-3xl p-2">About Me</h2>
+            <p className="p-2"><span className="font-semibold">Origin Story:</span> My coding journey began back in middle school.  I found this amazing website called Neopets and created a guild and to create a webpage for that guild, I needed to know
+                HTML so I googled around and learned about tables and headings.  Then I wanted to make Neopets and I researched and learned Neopets was coded in PHP so I tried to learn
+                all about PHP and MySQL.  I've been coding various things ever since!
+            </p>
+            <p className="p-2"><span className="font-semibold">Experience With:</span> Javascript, React, Cache, SQL, noSQL, NodeJS, HTML, CSS</p>
+            <p className="p-2"><span className="font-semibold">Interests:</span> Coding (of course), cello music/playing, chamber music, piano, attempting to cook, growing people (not in the gardening sense), trying to understand what my cat is saying.</p>
+          </div>
+        </div>
+        <div>
+
         </div>
       </main>
     </div>
