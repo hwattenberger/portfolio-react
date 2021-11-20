@@ -23,10 +23,12 @@ const Projects = ({projectNum, setProjectNum}) => {
                     <span>Trip Experiences</span>
                     MERN, GraphQL, Apollo
                 </div>
-                <div className="bg-green-300 p-2 drop-shadow rounded">
+                <div className="bg-green-300 p-2 drop-shadow rounded flex flex-col justify-center 
+                    hover:bg-purple-400 transform hover:-translate-y-1 transition duration-500 ease-in-out cursor-pointer"
+                    onClick={() => onClickProject(3)}>
                     <h3 className="text-5xl">3</h3>
-                    <span>Shift Scheduling - MySchedule</span>
-                    MERN
+                    <span>Substring KMT Search</span>
+                    React, Redux, Tailwind
                 </div>
                 <div className="bg-green-300 p-2 drop-shadow rounded">
                     <h3 className="text-5xl">4</h3>

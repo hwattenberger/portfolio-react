@@ -1,4 +1,4 @@
-import project1Img from './../../images/Scheduling App - Schedule.png'
+import project2Img from './../../images/Trip App Still Image.png'
 
 const Project2 = () => {
     return (
@@ -21,7 +21,7 @@ const Project2 = () => {
                 </p>
                 </div>
                 <div>
-                <img src={project1Img} className=""/>
+                <img src={project2Img} className=""/>
                 </div>
             </div>
             {/* <div className="w-1/2 p-4 bg-blue-300 rounded absolute bottom-500">
