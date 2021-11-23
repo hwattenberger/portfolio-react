@@ -1,29 +1,39 @@
 import React, {useState, useEffect} from 'react';
+import { motion } from 'framer-motion'
 
 import './App.css';
 import Projects from './components/Projects';
 import MainProject from './components/MainProject';
+import LandingTop from './components/LandingTop';
+import LandingTop2 from './components/LandingTop2';
 
 import noriBoxLg from './images/nori-box.png'
 import noriBoxSm from './images/nori-box-128.png'
 import Test from './Test';
 
+import Project1 from './components/projects/Project1';
+import Project2 from './components/projects/Project2';
+
+const transition = { duration: 5, ease: [.6, .01, .23, .96]};
+
+const projectVariants = {
+  offscreen: {
+    y: 80
+  },
+  onscreen: {
+    y: 0,
+    transition: {
+      type: "spring",
+      bounce: .4,
+      duration: 1
+    }
+  }
+}
+
+const projectsList = [<Project1/>, <Project2/>]
+
 function App() {
   const [projectNum, setProjectNum] = useState(1);
-
-  // const [showMain, setShowMain] = useState(false);
-
-  // useEffect(()=> {
-  //   setTimeout(()=>setShowMain(true),7000)
-  // }, []);
-
-  // if(!showMain) {
-  //   return (
-  //     <div className="App h-screen bg-purple-300 flex items-center justify-center">
-  //       <img src={noriBoxSm} srcSet={`${noriBoxSm} 450w, ${noriBoxLg} 1280w`} className="object-none main-nori-img aspect-h-4 aspect-w-3"></img>
-  //     </div>
-  //   )
-  // }
 
   return (
     <div className="App">
@@ -31,18 +41,16 @@ function App() {
       </header>
       <main>
         <div id="intro" className="h-screen flex items-center flex-col justify-center bg-purple-300 text-center">
-          <p>Hi - I'm...</p>
-          <h1 className="text-4xl	font-bold	">Hilary Wattenberger</h1>
-          <p>Thanks for visiting!  Take a look at some of the projects I've been working on recently.</p>
-          <Test><img src={noriBoxSm} srcSet={`${noriBoxSm} 450w, ${noriBoxLg} 1280w`} className="object-none main-nori-img aspect-h-4 aspect-w-3"></img></Test>
-          <div>
-            <a href="#work"><button className="px-8 py-2 mt-4 bg-gray-400	rounded-md m-2 transform hover:-translate-y-1 transition duration-500 ease-in-out">Projects</button></a>
-            <a href="#aboutMe"><button className="px-8 py-2 mt-4 bg-gray-400 rounded-md	transform hover:-translate-y-1 transition duration-500 ease-in-out">About Me</button></a>
-          </div>
+          <LandingTop2/>
         </div>
-        <div id="work" className="min-h-screen flex flex-col lg:flex-row">
-          <MainProject projectNum={projectNum} />
-          <Projects projectNum={projectNum} setProjectNum={setProjectNum}/>
+        <div id="work" className="min-h-screen flex flex-col">
+          {projectsList.map((project, ix)=> (
+            <motion.div className="mx-auto my-4 bg-blue-300 w-11/12 rounded h-96" key={ix} initial="offscreen" viewport={{once: true}} whileInView="onscreen" variants={projectVariants}>
+            {project}
+          </motion.div>
+          ))}
+          {/* <MainProject projectNum={projectNum} />
+          <Projects projectNum={projectNum} setProjectNum={setProjectNum}/> */}
         </div>
         <div id="aboutMe" className="flex flex-col items-center justify-center bg-purple-300">
           <div className="md:w-6/12 bg-purple-100 p-4 m-4 rounded">
