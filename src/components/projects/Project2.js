@@ -1,33 +1,43 @@
-import project2Img from './../../images/Trip App Still Image.png'
+import project2Img from './../../images/Trip App Still Image.png';
+import TextAnimation from '../TextAnimation';
+import Parallax from '../../Parallax';
+
+const tools = ["GraphQL", "Apollo", "Typescript", "React", "NodeJS", "Express", "MongoDB"];
 
 const Project2 = () => {
     return (
-        <div className="relative m-4">
-            <h2 className="text-3xl">Project 2 - Share travel experiences - Trips</h2>
-            <div className="bg-blue-300	rounded p-2 flex">
-                <div>
-                <p className="p-2">This is a full stack application for people planning big trips and for people who want to share a trip they were on.
-                            For example a trip to northern Europe.
-                </p>
-                <p className="p-2">
-                Features include many different integrations with Mapbox (see all trips on a map, see legs of your trip on a map, choose 
-                            where you traveled to via geocoding, select a location on a map if you don't remember the name), native authentication and
-                            JWT authorization, using an observer to move a map based on what you are viewing for a trip.
-                </p>
-                <p className="p-2">
-                If you visit site and do not want to create your own user, you can use the following: <br/>
-                            User: hilary <br/>
-                            Password: hilary
-                </p>
+        <>
+            {/* <div className="relative m-4"> */}
+            <div className="flex flex-col-reverse md:flex-row items-center">
+                <div className="ml-4">
+                    <h2 className="text-2xl p-2"><TextAnimation>Share Travel Experiences - Trips</TextAnimation></h2>
+                    <div className="box-border w-full flex flex-wrap">
+                        {tools.map((tool)=>(
+                        <span className="bg-blue-300 m-1 px-2 py-1 rounded" key={tool}>
+                            {tool}
+                        </span>
+                        ))}
+                    </div>
+                    <p className="p-2">
+                        This is a full stack application for people planning big trips and for people who want to share a trip they were on.
+                        For example a trip to northern Europe.
+                    </p>
+                    <p className="p-2">
+                        Features include many different integrations with Mapbox (see all trips on a map, see legs of your trip on a map, choose 
+                        where you traveled to via geocoding, select a location on a map if you don't remember the name), native authentication and
+                        JWT authorization, using an observer to move a map based on what you are viewing for a trip.
+                    </p>
+                    <div className="">
+                        <button className="bg-blue-400 m-1 px-2 py-1 rounded">Learn More</button>
+                    </div>
                 </div>
-                <div>
-                <img src={project2Img} className=""/>
-                </div>
+                <Parallax>
+                    <div className="bg-gray-300 p-2 rounded h-full flex items-center justify-center">
+                        <img src={project2Img} className=""/>
+                    </div>
+                </Parallax>
             </div>
-            {/* <div className="w-1/2 p-4 bg-blue-300 rounded absolute bottom-500">
-                <img src={project1Img} className=""/>
-            </div> */}
-        </div>
+        </>
     )
 }
 
