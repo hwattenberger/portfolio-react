@@ -1,25 +1,25 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-const letterVariants2 = {
-    before: {
-        opacity: 0,
-        y: 20,
-        transition: {
-            type: "spring",
-            damping: 12,
-            stiffness: 200
-        }
-      },
-    after: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: "spring",
-            damping: 12,
-            stiffness: 200
-        }
-      }
-}
+// const letterVariants2 = {
+//     before: {
+//         opacity: 0,
+//         y: 20,
+//         transition: {
+//             type: "spring",
+//             damping: 12,
+//             stiffness: 200
+//         }
+//       },
+//     after: {
+//         opacity: 1,
+//         y: 0,
+//         transition: {
+//             type: "spring",
+//             damping: 12,
+//             stiffness: 200
+//         }
+//       }
+// }
 
 const letterVariants = {
     before: {

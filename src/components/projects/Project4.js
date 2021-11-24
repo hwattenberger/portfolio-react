@@ -1,4 +1,4 @@
-import project4Img from './../../images/Todo Project.gif';
+import project4Img from './../../images/Todo List Still Image.png';
 import TextAnimation from '../TextAnimation';
 import Parallax from '../../Parallax';
 
@@ -10,7 +10,7 @@ const Project2 = () => {
             <div className="flex flex-col md:flex-row items-center">
                 <Parallax>
                     <div className="bg-gray-300 p-2 rounded h-full flex items-center justify-center">
-                        <img src={project4Img} className=""/>
+                        <img src={project4Img} alt="project 4"/>
                     </div>
                 </Parallax>
                 <div className="ml-4">
@@ -27,7 +27,10 @@ const Project2 = () => {
                         your todo list.  Updating the styles to fit your mood (3 different options).  Set due dates and use calendar view to visualize and update dates.
                     </p>
                     <div className="">
-                        <button className="bg-blue-400 m-1 px-2 py-1 rounded">Learn More</button>
+                        <a href="images/Todo Project.gif" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">View Workflow</button></a>
+                        <a href="https://dry-badlands-49476.herokuapp.com/" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">View Site</button></a>
+                        <a href="https://github.com/hwattenberger/todo" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">Source Code</button></a>
+
                     </div>
                 </div>
             </div>
