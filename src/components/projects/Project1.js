@@ -20,9 +20,8 @@ const Project1 = () => {
                 <div className="grid relative">
                     <div className="w-32 h-32 rounded-full bg-purple-300 absolute -top-12 -left-4"></div>
                     <Parallax>
-                        <div className="bg-gray-300 p-2 rounded h-full flex items-center justify-center">
+                        <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center">
                             <img src={project1Img} alt="project 1"/>
-                            {/* <div className="p-40 bg-purple-200"></div> */}
                         </div>
                     </Parallax>
                     

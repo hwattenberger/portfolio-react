@@ -33,7 +33,7 @@ const Project2 = () => {
                     </div>
                 </div>
                 <Parallax>
-                    <div className="bg-gray-300 p-2 rounded h-full flex items-center justify-center">
+                    <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center">
                         <img src={project2Img} alt="project 2"/>
                     </div>
                 </Parallax>

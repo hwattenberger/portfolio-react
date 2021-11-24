@@ -9,7 +9,7 @@ const Project2 = () => {
         <>
             <div className="flex flex-col md:flex-row items-center">
                 <Parallax>
-                    <div className="bg-gray-300 p-2 rounded h-full flex items-center justify-center">
+                    <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center">
                         <img src={project4Img} alt="project 4"/>
                     </div>
                 </Parallax>
