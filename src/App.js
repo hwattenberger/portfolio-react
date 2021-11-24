@@ -21,10 +21,12 @@ import Project4 from './components/projects/Project4';
 
 const projectVariants = {
   offscreen: {
-    y: 80
+    y: 80,
+    opacity: 0
   },
   onscreen: {
     y: 0,
+    opacity: 1,
     transition: {
       type: "spring",
       bounce: .6,
@@ -57,18 +59,18 @@ function App() {
           ))}
           <h2 className="text-3xl p-2 ml-14 mt-6">Additional Projects</h2>
           <div className="flex justify-center">
-            <div className="flex flex-col items-center md:flex-row w-10/12 p-4 m-4 rounded">
+            <div className="flex flex-col items-center md:flex-row w-11/12 p-4 m-4 rounded">
               {additionalProjects.map((project, projectIx)=>(
-                <motion.div className="flex flex-col w-full h-full md:w-1/3 bg-purple-100 rounded m-2 p-4" initial="offscreen" whileInView="onscreen" variants={projectVariants} key={projectIx}>
+                <motion.div className="flex flex-col w-full h-full md:w-1/3 bg-purple-100 rounded m-2 p-4" initial="offscreen" whileInView="onscreen" variants={projectVariants} key={projectIx} viewport={{once: true}}>
                   <h3 className="text-xl m-1">{project.title}</h3>
                   <div className="box-border w-full flex flex-wrap">
                     {project.tools.map((tool, toolIx)=>(
-                    <span className="bg-blue-300 m-1 px-2 py-1 rounded" key={toolIx}>
+                    <span className="bg-blue-300 m-1 px-4 py-1 rounded" key={toolIx}>
                         {tool}
                     </span>
                     ))}
                   </div>
-                  <div className="m-1">{project.description}</div>
+                  <div className="p-2">{project.description}</div>
                   <div className="box-border w-full flex flex-wrap mt-auto">
                     {project.links.map((tool, toolIx)=>(
                     <span className="bg-blue-400 m-1 px-2 py-1 rounded" key={toolIx}>

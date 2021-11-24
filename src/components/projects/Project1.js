@@ -2,6 +2,7 @@
 import project1Img from './../../images/Scheduling App - Schedule.png'
 import TextAnimation from '../TextAnimation';
 import Parallax from '../../Parallax';
+import Modal from '../Modal';
 
 const tools = ["React", "NodeJS", "Express", "MongoDB"];
 
@@ -27,24 +28,24 @@ const Project1 = () => {
                     
                 </div>
                 <div className="ml-4">
-                    <h2 className="text-2xl p-2"><TextAnimation>Shift Scheduling - MySchedule</TextAnimation></h2>
-                    <div className="box-border w-full flex flex-wrap">
+                    <h2 className="text-2xl p-4"><TextAnimation>Shift Scheduling - MySchedule</TextAnimation></h2>
+                    <div className="box-border w-full flex flex-wrap ml-3">
                         {tools.map((tool)=>(
-                        <span className="bg-blue-300 m-1 px-2 py-1 rounded" key={tool}>
+                        <span className="bg-blue-300 m-1 px-4 py-1 rounded" key={tool}>
                             {tool}
                         </span>
                         ))}
                     </div>
-                    <p className="p-2">This is a full stack MERN application geared towards restaurants that have many shift workers where 
+                    <p className="p-4">This is a full stack MERN application geared towards restaurants that have many shift workers where 
                         availability could change throughout a week (students, part time workers, etc).  Staff specify their weekly
                         availability and time off requests.  Then the manager can create a schedule based on those inputs or copy
                         a schedule from the past week.
                     </p>
-                    <p className="p-2">
+                    <p className="p-4">
                         Features include authentication (local or through Google), uploading profile pictures (using Cloudinary), 
                         and various admin tasks related to creating shifts & user roles & schedules.
                     </p>
-                    <div className="">
+                    <div className="ml-3">
                             <a href="https://hwattenberger-schedulingapp.netlify.app/" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">View Site</button></a>
                             <a href="https://github.com/hwattenberger/scheduling_application" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">Source Code</button></a>
                             <a href="/images/SchedulingAppDatabaseDiagram.html" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">View Data Model</button></a>
