@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import {useState} from 'react';
 
 import noriBoxImg from '../images/nori-box-128.png';
 import resume from '../images/Hilary Wattenberger Resume.pdf'
-import noriSittingImg from '../images/nori-sitting.png';
+// import noriSittingImg from '../images/nori-sitting.png';
 
 const topToggles = {
     visible: {opacity: 1, scale: 1, transition: {duration: 1, type: "spring", bounce: .4}},
