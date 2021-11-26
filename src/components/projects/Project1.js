@@ -22,7 +22,7 @@ const tools = ["React", "NodeJS", "Express", "MongoDB"];
 const sliderVariants = {
     enter: (direction) => {
       return {
-        x: direction > 0 ? 20 : -20,
+        x: direction < 0 ? 100 : -100,
         opacity: 0
       };
     },
@@ -35,7 +35,7 @@ const sliderVariants = {
     exit: (direction) => {
       return {
         zIndex: 0,
-        x: direction < 0 ? 20 : -20,
+        x: direction > 0 ? 100 : -100,
         opacity: 0
       };
     }
@@ -49,17 +49,19 @@ const Project1 = () => {
     const goLeft = () => {
         if (imgPage === 0) setImgPage(images.length-1);
         else setImgPage((page)=>page-1);
+        setDirection(-1);
     }
 
     const goRight = () => {
         if (imgPage === images.length-1) setImgPage(0);
         else setImgPage((page)=>page+1);
+        setDirection(1);
     }
 
     return (
         <>
             <div className="flex flex-col md:flex-row items-center">
-                <div className="grid relative">
+                <div className="relative">
                     <div className="w-32 h-32 rounded-full bg-purple-300 absolute -top-12 -left-4"></div>
                     <Parallax>
                         <div className="bg-pink-600 p-2 rounded flex items-center justify-center cursor-pointer group" onClick={()=>setShowModal(true)}>

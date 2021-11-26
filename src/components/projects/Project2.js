@@ -32,11 +32,14 @@ const Project2 = () => {
                         <a href="https://github.com/hwattenberger/trips" target="_blank" rel="noreferrer"><button className="bg-blue-400 m-1 px-2 py-1 rounded">Source Code</button></a>
                     </div>
                 </div>
-                <Parallax>
-                    <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center">
-                        <img src={project2Img} alt="project 2"/>
-                    </div>
-                </Parallax>
+                <div className="relative">
+                    <div className="w-32 h-32 rounded-full bg-purple-300 absolute -top-12 -right-4"></div>
+                    <Parallax>
+                        <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center">
+                            <img src={project2Img} alt="project 2"/>
+                        </div>
+                    </Parallax>
+                </div>
             </div>
         </>
     )
