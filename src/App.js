@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion'
+import React, {useEffect} from 'react';
+import { motion } from 'framer-motion';
+import ReactGA from 'react-ga';
 
 import './App.css';
 import LandingTop2 from './components/LandingTop2';
@@ -12,9 +13,15 @@ import AdditionalProjects from './components/projects/AdditionalProjects';
 
 // const transition = { duration: 2, ease: [.6, .01, .23, .96]};
 
+ReactGA.initialize('UA-206079988-1');
+
 const projectsList = [<Project1/>, <Project2/>, <Project4/>]
 
 function App() {
+  useEffect(()=> {
+    ReactGA.pageview(window.location.pathname);
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
