@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactGA from 'react-ga';
 
 import project1Img from './../../images/Scheduling App - Schedule.png'
 import TextAnimation from '../TextAnimation';
@@ -58,13 +59,18 @@ const Project1 = () => {
         setDirection(1);
     }
 
+    const turnOnModal = () => {
+        ReactGA.event({category: 'Project 1', action: 'Click show modal'});
+        setShowModal(true);
+    }
+
     return (
         <>
             <div className="flex flex-col md:flex-row items-center">
                 <div className="relative">
                     <div className="w-32 h-32 rounded-full bg-purple-300 absolute -top-12 -left-4"></div>
                     <Parallax>
-                        <div className="bg-pink-600 p-2 rounded flex items-center justify-center cursor-pointer group" onClick={()=>setShowModal(true)}>
+                        <div className="bg-pink-600 p-2 rounded flex items-center justify-center cursor-pointer group" onClick={turnOnModal}>
                             <img src={project1Img} alt="project 1" className="z-0 hover:p-4 group-hover:opacity-80"/>
                             <div className="absolute z-10 opacity-0 group-hover:opacity-100 duration-300 font-medium text-lg">Click to see images</div>
                         </div>

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import ReactGA from 'react-ga';
+
 import project4Img from './../../images/Todo List Still Image.png';
 import project4Workflow from './../../images/Todo Project.gif'
 import TextAnimation from '../TextAnimation';
@@ -10,11 +12,16 @@ const tools = ["Vanilla JS", "NodeJS", "Express", "MongoDB"];
 const Project2 = () => {
     const [showModal, setShowModal] = useState(false);
 
+    const turnOnModal = () => {
+        ReactGA.event({category: 'Project 4', action: 'Click show modal'});
+        setShowModal(true);
+    }
+
     return (
         <>
             <div className="flex flex-col md:flex-row items-center">
                 <Parallax>
-                    <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center cursor-pointer group" onClick={()=>setShowModal(true)}>
+                    <div className="bg-pink-600 p-2 rounded h-full flex items-center justify-center cursor-pointer group" onClick={turnOnModal}>
                         <img src={project4Img} alt="project 4" className="z-0 hover:p-4 group-hover:opacity-80"/>
                         <div className="absolute z-10 opacity-0 group-hover:opacity-100 duration-300 font-medium text-lg">Click to see workflow</div>
                     </div>
