@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import {useState} from 'react';
+import ReactGA from 'react-ga';
 
 import noriBoxImg from '../images/nori-box-128.png';
 import resume from '../images/Hilary Wattenberger Resume.pdf'
@@ -33,6 +34,11 @@ const firstNameVariants = {
 const LandingTop2 = () => {
     const [showNori, setShowNori] = useState(false);
     const [initialLoad, setInitialLoad] = useState(true);
+
+    const toggleNori = () => {
+        ReactGA.event({category: 'Nori', action: 'Toggle'});
+        setShowNori((currentNori)=>!currentNori);
+    }
 
     return (
         <>
@@ -79,7 +85,7 @@ const LandingTop2 = () => {
                     </motion.div>
                     <motion.div className="w-12" variants={topToggles}>
                         <motion.div className="bg-gray-200 rounded-full w-10 cursor-pointer" 
-                            whileHover={(showNori) ? {scale: 1.1, rotate:10, backgroundColor: "#F87171"}: {scale: 1.1, rotate:10, backgroundColor: "#FFFFFF"}} onClick={()=>setShowNori((noriState)=>!noriState)}
+                            whileHover={(showNori) ? {scale: 1.1, rotate:10, backgroundColor: "#F87171"}: {scale: 1.1, rotate:10, backgroundColor: "#FFFFFF"}} onClick={toggleNori}
                             animate={{backgroundColor: showNori ? "#F9A8D4":"#E5E7EB"}}>
                             <img src={noriBoxImg} alt="show-cat"></img>
                         </motion.div>
