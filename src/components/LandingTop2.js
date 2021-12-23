@@ -3,7 +3,7 @@ import {useState} from 'react';
 import ReactGA from 'react-ga';
 
 import noriBoxImg from '../images/nori-box-128.png';
-import resume from '../images/Hilary Wattenberger Resume.pdf'
+// import resume from '../images/Hilary Wattenberger Resume.pdf'
 // import noriSittingImg from '../images/nori-sitting.png';
 
 const topToggles = {
@@ -73,7 +73,7 @@ const LandingTop2 = () => {
                 </motion.div>
                 <motion.div className="flex absolute top-0 right-0 m-2" initial={"hidden"} animate={"visible"} variants={topToggleContainer}
                     onAnimationComplete={()=>setInitialLoad(false)}>
-                    <motion.div className="w-12" variants={topToggles}>
+                    {/* <motion.div className="w-12" variants={topToggles}>
                         <motion.div className="bg-gray-200 rounded-full w-10" whileHover={{scale: 1.1, rotate:-20, backgroundColor: "#FFFFFF"}}>
                             <a href={resume} target="_blank" rel="noreferrer">
                             <svg className="w-10 p-px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
@@ -82,7 +82,7 @@ const LandingTop2 = () => {
                             </svg>
                             </a>
                         </motion.div>
-                    </motion.div>
+                    </motion.div> */}
                     <motion.div className="w-12" variants={topToggles}>
                         <motion.div className="bg-gray-200 rounded-full w-10 cursor-pointer" 
                             whileHover={(showNori) ? {scale: 1.1, rotate:10, backgroundColor: "#F87171"}: {scale: 1.1, rotate:10, backgroundColor: "#FFFFFF"}} onClick={toggleNori}
